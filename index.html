@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+(function() {
+    var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+
+    // resize the canvas to fill browser window dynamically
+    window.addEventListener('resize', resizeCanvas, false);
+
+    function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            /**
+             * Your drawings need to be inside this function otherwise they will be reset when 
+             * you resize the browser window and the canvas goes will be cleared.
+             */
+            drawStuff(); 
+    }
+    resizeCanvas();
+
+    function drawStuff() {
+            // do your drawing stuff here
+    }
+})();
+</script>
+</head>
+ 
+<body>
+	
+<p class="button"><button type="button">Click Me!</button></class>
+
+<canvas id="canvas" style="border:10px solid #000000;" ></canvas>
+
+<script>
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+	  var width = 20;
+      var height = 100;
+      var imageObj = new Image();
+
+      imageObj.onload = function() {
+        context.drawImage(imageObj, 50,0,width,height);
+      };
+      imageObj.src = 'image.jpeg';
+</script>
+
+</body>
+</html>
